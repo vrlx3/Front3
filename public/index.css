@@ -1,0 +1,16 @@
+
+
+#activities > div {
+    border: solid 1px black;
+
+}
+
+#allroutines > div {
+    border: solid 1px black;
+    padding-left:1vw;
+}
+
+#myroutines > div {
+    border: solid 1px black;
+    padding-left:1vw;
+}

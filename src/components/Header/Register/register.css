@@ -1,0 +1,25 @@
+#register {
+    display:flex;
+    text-align: end;
+    font-size: 75%;
+    
+}
+
+#register > div {
+   border: solid 3px whitesmoke;
+   border-radius: 10px;
+   text-align: center;
+   margin-left:1vw;
+   margin-right: 1vw;
+   padding-left: 1vw;
+   padding-right: 1vw;
+
+}
+
+#logout_button{
+    background-color: inherit;
+    cursor:nw-resize;
+
+    
+
+}
