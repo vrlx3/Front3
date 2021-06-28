@@ -3,9 +3,8 @@ import React from 'react'
 function Footer () {
     return (
         <div id='footer'>
+    - made by Viral Bhavsar......
 
-
-            Footer...
         </div>
     )
 }

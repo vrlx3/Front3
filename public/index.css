@@ -14,3 +14,26 @@
     border: solid 1px black;
     padding-left:1vw;
 }
+
+#footer {
+
+
+    background-color:rgba(100, 148, 237, 0.769);
+    width: 100vw;
+    margin: 0;
+    padding-left:1vw;
+    padding-right:25px;
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+  
+  color: white;
+  text-align: right;
+}
+
+/* CSS is also inside components */
