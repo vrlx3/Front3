@@ -1,31 +1,29 @@
-import { retry } from 'async';
-import React, {useState, useEffect} from 'react';
-import Navbar from './Navbar/Navbar'
-import Register from './Register/Register'
-import style from './header.css'
+import { retry } from "async";
+import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar/Navbar";
+import Register from "./Register/Register";
+import style from "./header.css";
 
-function Header () {
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.token)
-    console.log(isLoggedIn)
+function Header(props) {
+  const { isLoggedIn, setIsLoggedIn, id, setId } = props;
 
-    useEffect(()=> {
-        setIsLoggedIn(!!localStorage.token)
-    }, [!!localStorage.token])
+  console.log(isLoggedIn);
 
-    return (
-       <> <div id='header'>
-            <div id='welcome'>Welcome to Fitness Tracker</div>
-            <Register/> 
-
-            
-            
-
-        </div>
-        <Navbar/>
-        
-
-        </>
-    )
+  return (
+    <>
+      {" "}
+      <div id="header">
+        <div id="welcome">Welcome to Fitness Tracker</div>
+        <Register
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          id={id}
+          setId={setId}
+        />
+      </div>
+      <Navbar isLoggedIn={isLoggedIn} />
+    </>
+  );
 }
 
 export default Header;
