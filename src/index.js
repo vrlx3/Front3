@@ -10,12 +10,18 @@ import {
   Header,
   Footer,
   EditRoutine,
+  EditActivity2,
 } from "./components";
+import EditActivity from "./components/EditActivity";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [id, setId] = useState("");
   const [editRoutineId, setEditRoutineId] = useState("");
+  const [count, setCount] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [routineActivityId, setRoutineActivityId] = useState("");
+  const [rName, setrName] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -47,19 +53,44 @@ const App = () => {
               isLoggedIn={isLoggedIn}
               id={id}
               setEditRoutineId={setEditRoutineId}
+              setCount={setCount}
+              setDuration={setDuration}
+              setRoutineActivityId={setRoutineActivityId}
+              setrName={setrName}
             />
           )}
         />{" "}
-        <Route path="/activities" component={Actvities} />
-        <Route path="/myactivities" />
         <Route
-          path="/editroutine"
+          path="/activities"
+          render={(props) => <Actvities {...props} isLoggedIn={isLoggedIn} />}
+        />
+        {/* <Route path="/myactivities" /> */}
+        <Route
+          path="/addactivity"
           render={(props) => (
             <EditRoutine
               {...props}
               isLoggedIn={isLoggedIn}
               id={id}
               editRoutineId={editRoutineId}
+              rName={rName}
+            />
+          )}
+        />
+        <Route
+          path="/editactivity"
+          render={(props) => (
+            <EditActivity2
+              {...props}
+              isLoggedIn={isLoggedIn}
+              id={id}
+              editRoutineId={editRoutineId}
+              count={count}
+              duration={duration}
+              routineActivityId={routineActivityId}
+              setCount={setCount}
+              setDuration={setDuration}
+              setRoutineActivityId={setRoutineActivityId}
             />
           )}
         />

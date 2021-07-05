@@ -1,5 +1,5 @@
-import React from 'react'
+// import React from 'react'
 
-function LoginForm () { return ( (<h1>LoginForm</h1>))}
+// function LoginForm () { return ( (<h1>LoginForm</h1>))}
 
-export default LoginForm;
+// export default LoginForm;

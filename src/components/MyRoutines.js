@@ -5,9 +5,18 @@ import NewRoutine from "./NewRoutine";
 import DeleteActivity from "./DeleteActivity";
 
 const MyRoutines = (props) => {
-  const { isLoggedIn, id, setEditRoutineId } = props;
+  const {
+    isLoggedIn,
+    id,
+    setEditRoutineId,
+    setCount,
+    setDuration,
+    setRoutineActivityId,
+    setrName,
+  } = props;
   const [username, setUserName] = useState("");
   const [myRoutines, setMyRoutines] = useState([]);
+  const [render, setRender] = useState(0);
 
   async function getMyRoutines() {
     const { data } = await axios.get(
@@ -46,7 +55,7 @@ const MyRoutines = (props) => {
       setMyRoutines(data);
     }
     getallMyRoutines();
-  }, []);
+  }, [render]);
 
   console.log(myRoutines);
 
@@ -82,15 +91,28 @@ const MyRoutines = (props) => {
                             </div>
                             <DeleteActivity
                               routineActivityId={a.routineActivityId}
+                              render={render}
+                              setRender={setRender}
                             />
+                            <Link
+                              to="/editactivity"
+                              onClick={(e) => {
+                                setRoutineActivityId(a.routineActivityId);
+                                setCount(a.count);
+                                setDuration(a.duration);
+                              }}
+                            >
+                              Edit Activity
+                            </Link>
                           </>
                         );
                       })}
                     </div>
                     <Link
-                      to="/editroutine"
+                      to="/addactivity"
                       onClick={(e) => {
                         setEditRoutineId(routine.id);
+                        setrName(routine.name);
                       }}
                     >
                       Add Activites

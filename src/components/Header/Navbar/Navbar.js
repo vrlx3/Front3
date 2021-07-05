@@ -5,6 +5,7 @@ import MyNav from "./MyNav";
 
 function Navbar(props) {
   const { isLoggedIn } = props;
+
   return (
     <div id="navmaster">
       <div id="navbar">
@@ -18,7 +19,7 @@ function Navbar(props) {
         <Link to="/activities" id="nav_activities">
           Activites
         </Link>{" "}
-        {isLoggedIn ? <Link to="/myactivities">My Activites</Link> : <></>}
+        {/* {isLoggedIn ? <Link to="/myactivities">My Activites</Link> : <></>} */}
       </div>
     </div>
   );

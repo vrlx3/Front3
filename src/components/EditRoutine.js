@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Routines from "./Routines";
 
 async function getActivities() {
   let { data } = await axios.get(
@@ -19,9 +20,9 @@ const EditRoutine = function (props) {
 
   const [activities, setActivities] = useState([]);
 
-  const [activityId, setActivityId] = useState("");
-  const [count, setCount] = useState("");
-  const [duration, setDuration] = useState("");
+  const [activityId, setActivityId] = useState(61);
+  const [count, setCount] = useState(1);
+  const [duration, setDuration] = useState(1);
 
   console.log(activityId);
 
@@ -68,8 +69,8 @@ const EditRoutine = function (props) {
   return (
     <div id="newRoutine">
       {" "}
-      <h5>Routine Name</h5>{" "}
-      <input
+      <h5>Routine Name - {rName}</h5>{" "}
+      {/* <input
         type="text"
         onChange={(e) => {
           setName(e.target.value);
@@ -77,8 +78,8 @@ const EditRoutine = function (props) {
         name={name}
         placeholder="Edit Routine"
         value={name}
-      ></input>{" "}
-      <h5>Goal</h5>
+      ></input>{" "} */}
+      {/* <h5>Goal</h5>
       <input
         type="text"
         onChange={(e) => {
@@ -87,7 +88,7 @@ const EditRoutine = function (props) {
         goal={goal}
         placeholder="Edit Goal"
         value={goal}
-      ></input>
+      ></input> */}
       <h5>Activity</h5>
       <select
         id="activities"
@@ -106,7 +107,7 @@ const EditRoutine = function (props) {
       <h5>Activity Duration</h5>
       <input
         type="number"
-        min="0"
+        min="1"
         max="100"
         onChange={(e) => {
           setDuration(e.target.value);
@@ -115,7 +116,7 @@ const EditRoutine = function (props) {
       <h5>Count</h5>
       <input
         type="number"
-        min="0"
+        min="1"
         max="100"
         onChange={(event) => {
           setCount(event.target.value);

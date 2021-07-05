@@ -3,7 +3,7 @@ import React from "react";
 let auth = "Bearer " + localStorage.token;
 
 function DeleteActivity(props) {
-  const { routineActivityId } = props;
+  const { routineActivityId, render, setRender } = props;
   async function handleDelete(e) {
     e.preventDefault();
     const response = fetch(
@@ -21,7 +21,9 @@ function DeleteActivity(props) {
         console.log(result);
       })
       .catch(console.error);
-
+    if (response.success) {
+      setRender(render + 1);
+    }
     console.log("del activity", response);
   }
   return (
