@@ -1,39 +1,54 @@
-
-
 #activities > div {
-    border: solid 1px black;
-
+  border: solid 1px black;
 }
 
 #allroutines > div {
-    border: solid 1px black;
-    padding-left:1vw;
+  border: solid 1px black;
+  padding-left: 1vw;
 }
 
-#myroutines > div {
-    border: solid 1px black;
-    padding-left:1vw;
+#myRoutines > div {
+  border: solid 1px black;
+  padding-left: 1vw;
 }
 
 #footer {
-
-
-    background-color:rgba(100, 148, 237, 0.769);
-    width: 100vw;
-    margin: 0;
-    padding-left:1vw;
-    padding-right:25px;
-    padding-top:1vh;
-    padding-bottom: 1vh;
-    
+  background-color: rgba(100, 148, 237, 0.769);
+  width: 100vw;
+  margin: 0;
+  padding-left: 1vw;
+  padding-right: 25px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 
   position: fixed;
   left: 0;
   bottom: 0;
-  
-  
+
   color: white;
   text-align: right;
 }
 
-/* CSS is also inside components */
+#imgYoga {
+  margin: 0;
+  padding: 0;
+
+  max-width: 100vw;
+  max-height: 80vh;
+  margin: auto;
+}
+
+#homePage {
+  display: inline-flex;
+}
+
+#homeMessage {
+  font-size: xx-large;
+}
+#homeMessage > p {
+  font-size: large;
+}
+
+#newRoutine {
+  padding: 5px;
+}
